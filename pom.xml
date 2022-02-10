@@ -15,6 +15,15 @@
     <description>e-expense-api</description>
     <properties>
         <java.version>11</java.version>
+        <code.coverage.exclusions>
+            **/io/yourcode47/eexpenseapi/dto/**,
+            **/io/yourcode47/eexpenseapi/model/**,
+            **/io/yourcode47/eexpenseapi/mapper/**,
+            **/io/yourcode47/eexpenseapi/advice/**,
+            **/io/yourcode47/eexpenseapi/exception/**,
+            **/io/yourcode47/eexpenseapi/config/**,
+            **/io/yourcode47/eexpenseapi/EExpenseCrudApiApplication.java
+        </code.coverage.exclusions>
     </properties>
     <dependencies>
         <dependency>
@@ -71,4 +80,37 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <properties>
+                <sonar.sources>.</sonar.sources>
+                <sonar.inclusions>src/main/java/**,src/main/resources/**</sonar.inclusions>
+                <sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
+                <sonar.projectKey>youcode47_e-expense-api</sonar.projectKey>
+                <sonar.organization>youcode47</sonar.organization>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <version>3.7.0.1746</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sonar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
