@@ -12,7 +12,7 @@
     <artifactId>e-expense-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>e-expense-api</name>
-    <description>e-expense-api</description>
+    <description>CRUD Application for home expense</description>
     <properties>
         <java.version>11</java.version>
         <code.coverage.exclusions>
@@ -113,4 +113,11 @@
             </build>
         </profile>
     </profiles>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>CRUD Application for home expense</name>
+            <url>https://maven.pkg.github.com/youcode47/e-expense-api</url>
+        </repository>
+    </distributionManagement>
 </project>
