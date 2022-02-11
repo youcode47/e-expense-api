@@ -22,7 +22,7 @@
             **/io/yourcode47/eexpenseapi/advice/**,
             **/io/yourcode47/eexpenseapi/exception/**,
             **/io/yourcode47/eexpenseapi/config/**,
-            **/io/yourcode47/eexpenseapi/EExpenseCrudApiApplication.java
+            **/io/yourcode47/eexpenseapi/EExpenseApiApplication.java
         </code.coverage.exclusions>
     </properties>
     <dependencies>
